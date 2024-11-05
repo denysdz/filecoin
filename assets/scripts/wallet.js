@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const chevron1 = document.getElementById("chevron1");
   const chevron2 = document.getElementById("chevron2");
   const chevron3 = document.getElementById("chevron3");
+  const chevron4 = document.getElementById("chevron4");
   const amountError = document.getElementById("amountError");
   const send1 = document.getElementById("send1");
   const send2 = document.getElementById("send2");
@@ -87,6 +88,10 @@ document.addEventListener("DOMContentLoaded", function () {
   chevron3.addEventListener("click", function () {
     balance.classList.remove("hidden");
     sending.classList.add("hidden");
+  });
+  chevron4.addEventListener("click", function () {
+    balance.classList.remove("hidden");
+    reciving.classList.add("hidden");
   });
   send1.addEventListener("click", function () {
     sending.classList.remove("hidden");
