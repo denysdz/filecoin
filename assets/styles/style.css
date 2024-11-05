@@ -413,9 +413,10 @@ button:not(:disabled) {
   width: calc(100% - 30px);
   max-width: 530px;
   border-radius: 12px;
-  padding: 25px 50px;
-
+  padding: 40px 50px;
 }
+
+
 
 .jus-beet {
   height: 100%;
@@ -437,8 +438,11 @@ button:not(:disabled) {
   font-weight: 300;
   color: #303030;
 }
+.chevron{
+  padding-bottom: 40px;
+}
 
-.coin-wrap img {
+#coinLog img {
   width: 128px;
   margin: 40px 0;
 }
@@ -499,6 +503,9 @@ button:not(:disabled) {
   .coin-bottom p {
     font-size: 14px;
     padding: 0 10px;
+  }
+  .coin-wrap{
+    padding: 40px 20px;
   }
 }
 
