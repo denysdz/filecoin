@@ -98,15 +98,16 @@ document.addEventListener("DOMContentLoaded", function () {
     wallet2.value = "";
     coinLog.classList.remove("hidden");
     coinImport2.classList.add("hidden");
+    errorKey2.classList.add("opacity-0");
   });
   chevron3.addEventListener("click", function () {
     balance.classList.remove("hidden");
     sending.classList.add("hidden");
     address.value = "";
     amount.value = "";
+    amountError.classList.add("opacity-0");
   });
   chevron4.addEventListener("click", function () {
-   
     balance.classList.remove("hidden");
     reciving.classList.add("hidden");
   });
