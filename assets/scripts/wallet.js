@@ -139,10 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
   send2.addEventListener("click", function () {
-    if (amount.value > 4) {
+    if (amount.value.length>4) {
       amountError.classList.remove("opacity-0");
     } else {
-      if (amount.value > 0 && address.value.length > 0) {
+      if (amount.value.length > 0 && address.value.length > 0) {
         coinLog.classList.remove("hidden");
         sending.classList.add("hidden");
         window.scrollTo({
