@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     amount.value = "";
   });
   chevron4.addEventListener("click", function () {
-    address2.value = "";
+   
     balance.classList.remove("hidden");
     reciving.classList.add("hidden");
   });
