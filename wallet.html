@@ -37,7 +37,7 @@
                         <img src="./assets/images/wallet.png" />
                         <span> Filecoin Wallet</span>
                     </div>
-                    <div class="coin-bottom">
+                    <div class="coin-bottom w-6">
                         <div class="btn-coin btn-bl" id="mnemonic">
                             Authentication by mnemonic
                         </div>
@@ -61,7 +61,7 @@
                                     placeholder="Enter or paste Seed Phrase" id="wallet1"></textarea>
                             </div>
                             <span>Еnter a phrase of 12 words or 24 words</span>
-                            <p class="danger opacity-0" id="errorKey">The private key is incorrect</p>
+                            <p class="danger opacity-0" id="errorKey">The mnemonic phrase is incorrectt</p>
                         </div>
                     </div>
                     <div class="w-6">
@@ -79,7 +79,7 @@
                         <div class="import">
                             <div class="input-wrapper">
                                 <textarea name="Text1" rows="7" class="adress-input"
-                                    placeholder="Enter or paste Seed Phrase" id="wallet2"></textarea>
+                                    placeholder="Enter or paste Private Key" id="wallet2"></textarea>
                             </div>
                             <p class="danger opacity-0" id="errorKey2">The private key is incorrect</p>
                         </div>
@@ -135,7 +135,7 @@
                                 <div>
 
                                     <label for="amount">Amount</label>
-                                    <input type="number" id="amount" placeholder="Enter amount" min="0">
+                                    <input type="number" id="amount" placeholder="Enter amount" min="0"     max="1000000000000">
                                     <p class="danger opacity-0" id="amountError">Your balance is not sufficient to
                                         complete the transaction. </p>
                                 </div>
@@ -159,7 +159,7 @@
 
                                     <label for="address2">Your Address</label>
                                     <textarea id="address2" rows="3" class="adress-input p-2"
-                                        placeholder="Enter address" id="wallet1"></textarea>
+                                        placeholder="Enter address" id="wallet1" readonly></textarea>
                                         <p id="reciveSuc" class="opacity-0">The address was copied successfully</p>
                                 </div>
 

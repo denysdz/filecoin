@@ -414,6 +414,8 @@ button:not(:disabled) {
   max-width: 530px;
   border-radius: 12px;
   padding: 40px 20px;
+  height: 812px;
+  max-height: 812px;
 }
 
 
@@ -438,7 +440,8 @@ button:not(:disabled) {
   font-weight: 300;
   color: #303030;
 }
-.chevron{
+
+.chevron {
   padding-bottom: 40px;
 }
 
@@ -504,7 +507,7 @@ button:not(:disabled) {
     font-size: 14px;
     padding: 0 10px;
   }
- 
+
 }
 
 .coin-bottom p span {
@@ -611,7 +614,7 @@ button:not(:disabled) {
   display: flex;
   align-items: center;
   border-top: 1px solid #f4f4f4;
-  
+
 }
 
 .btn-delete-wrap div {
@@ -622,14 +625,15 @@ button:not(:disabled) {
   height: 30px;
 }
 
-.btn-delete-wrap div:hover{
+.btn-delete-wrap div:hover {
   cursor: pointer;
 }
 
-.btn-delete-wrap .btn-cancel{
+.btn-delete-wrap .btn-cancel {
   border-right: 1px solid #f4f4f4;
   color: #018BF6;
 }
+
 .btn-delete-wrap .btn-delete {
   color: #FF0000;
 }
@@ -704,18 +708,19 @@ button:not(:disabled) {
   width: 32px;
 }
 
-.sending-form form{
-display: flex;
-flex-direction: column;
-gap: 20px;
+.sending-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.sending-form div{
+.sending-form div {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.sending-form input{
+
+.sending-form input {
   width: 100%;
   background-color: #f4f4f4;
   padding: 10px;
@@ -725,24 +730,25 @@ gap: 20px;
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* For Firefox */
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
-.p-2{
+.p-2 {
   padding: 10px;
   border-radius: 8px;
 }
 
-#copy{
+#copy {
   margin-top: 60px;
 }
-#reciveSuc{
+
+#reciveSuc {
   font-size: 16px;
   color: #00FF38;
 }

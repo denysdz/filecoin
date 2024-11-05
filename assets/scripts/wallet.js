@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorKey2 = document.getElementById("errorKey2");
   const wallet1 = document.getElementById("wallet1");
   const wallet2 = document.getElementById("wallet2");
+  const address2 = document.getElementById("address2");
   const openDelete = document.getElementById("openDelete");
   const deleteAlert = document.getElementById("deleteAlert");
   const btnCancel = document.getElementById("btnCancel");
@@ -27,7 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const copy = document.getElementById("copy");
   const reciving = document.getElementById("reciving");
   const reciveSuc = document.getElementById("reciveSuc");
+  const address = document.getElementById("address");
 
+  address2.value =
+    "02d24f3667ee41eb59594f0647e145efa1f765031de36ac2ca47819d17ca78cc98";
   // Add a click event listener to the signIn button
   mnemonic.addEventListener("click", function () {
     // Add 'hidden' class to coinLog and remove it from coinImport
@@ -110,18 +114,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   send2.addEventListener("click", function () {
-    if (amount.value < 4) {
-      coinLog.classList.remove("hidden");
-      sending.classList.add("hidden");
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else {
+    if (amount.value > 4) {
       amountError.classList.remove("opacity-0");
+    } else {
+      if (amount.value > 0 && address.value.length > 0) {
+        coinLog.classList.remove("hidden");
+        sending.classList.add("hidden");
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
     }
   });
   copy.addEventListener("click", function () {
     reciveSuc.classList.remove("opacity-0");
+
+    setTimeout(function () {
+      reciveSuc.classList.add("opacity-0");
+    }, 3000);
   });
 });
