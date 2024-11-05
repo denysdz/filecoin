@@ -129,23 +129,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   amount.addEventListener("input", function () {
-    // Replace any character that is not a digit, a decimal point, or a comma
     this.value = this.value.replace(/[^0-9.,]/g, "");
 
-    // Prevent multiple decimal points or commas
     const decimalCount = (this.value.match(/[.,]/g) || []).length;
     if (decimalCount > 1) {
-      // If there are more than one decimal point or comma, remove the last one
-      this.value = this.value.replace(/[.,]+$/, ""); // Remove last characters that are decimal points or commas
-      const firstSeparatorIndex = this.value.search(/[.,]/);
-      if (firstSeparatorIndex !== -1) {
-        // Remove any subsequent decimal points or commas after the first one
-        this.value =
-          this.value.slice(0, firstSeparatorIndex + 1) +
-          this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
-      }
+        this.value = this.value.replace(/[.,]+$/, "");
+        const firstSeparatorIndex = this.value.search(/[.,]/);
+        if (firstSeparatorIndex !== -1) {
+            this.value =
+                this.value.slice(0, firstSeparatorIndex + 1) +
+                this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
+        }
     }
-  });
+
+    if (this.value.length > 12) {
+        this.value = this.value.slice(0, 12);
+    }
+});
+
 
   send2.addEventListener("click", function () {
     if (amount.value.length > 4) {
@@ -164,10 +165,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   copy.addEventListener("click", function () {
+    const textToCopy = address2.value;
+
+    const tempInput = document.createElement("input");
+    tempInput.value = textToCopy;
+
+    document.body.appendChild(tempInput);
+
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
     reciveSuc.classList.remove("opacity-0");
 
     setTimeout(function () {
       reciveSuc.classList.add("opacity-0");
     }, 2000);
   });
+});
+
+window.addEventListener("beforeunload", function () {
+  wallet2.value = "";
+  amount.value = "";
+  address.value = "";
+  wallet1.value = "";
 });

@@ -663,7 +663,7 @@ button:not(:disabled) {
   font-size: 28px;
   color: #018BF6;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .balance-main .fil {
@@ -674,13 +674,13 @@ button:not(:disabled) {
 .amount-price {
   margin: 5px 0;
   display: flex;
-  gap: 6px;
+  gap: 4px;
   justify-content: center;
 }
 
 .amount-price span {
   color: #1CB72C;
-  font-size: 20px;
+  font-size: 14px;
 
 }
 
