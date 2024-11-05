@@ -133,20 +133,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const decimalCount = (this.value.match(/[.,]/g) || []).length;
     if (decimalCount > 1) {
-        this.value = this.value.replace(/[.,]+$/, "");
-        const firstSeparatorIndex = this.value.search(/[.,]/);
-        if (firstSeparatorIndex !== -1) {
-            this.value =
-                this.value.slice(0, firstSeparatorIndex + 1) +
-                this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
-        }
+      this.value = this.value.replace(/[.,]+$/, "");
+      const firstSeparatorIndex = this.value.search(/[.,]/);
+      if (firstSeparatorIndex !== -1) {
+        this.value =
+          this.value.slice(0, firstSeparatorIndex + 1) +
+          this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
+      }
     }
 
     if (this.value.length > 12) {
-        this.value = this.value.slice(0, 12);
+      this.value = this.value.slice(0, 12);
     }
-});
-
+  });
 
   send2.addEventListener("click", function () {
     if (amount.value.length > 4) {
@@ -185,6 +184,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("beforeunload", function () {
+  const wallet2 = document.getElementById("wallet2");
+  const amount = document.getElementById("amount");
+  const address = document.getElementById("address");
+  const wallet1 = document.getElementById("wallet1");
   wallet2.value = "";
   amount.value = "";
   address.value = "";
