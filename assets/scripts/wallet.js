@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   importWallet2.addEventListener("click", function () {
-    if (wallet2.value.length < 10) {
+    if (wallet2.value.length < 10 && wallet2.value.length > 0) {
       errorKey2.classList.remove("opacity-0");
-    } else {
+    } else if (wallet2.value.length > 10) {
       wallet2.value = "";
       coinImport2.classList.add("hidden");
       balance.classList.remove("hidden");
