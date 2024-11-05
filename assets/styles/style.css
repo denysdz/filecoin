@@ -413,7 +413,7 @@ button:not(:disabled) {
   width: calc(100% - 30px);
   max-width: 530px;
   border-radius: 12px;
-  padding: 40px 50px;
+  padding: 40px 20px;
 }
 
 
@@ -504,9 +504,7 @@ button:not(:disabled) {
     font-size: 14px;
     padding: 0 10px;
   }
-  .coin-wrap{
-    padding: 40px 20px;
-  }
+ 
 }
 
 .coin-bottom p span {
