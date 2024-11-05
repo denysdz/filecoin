@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (wallet1.value.length < 10) {
       errorKey.classList.remove("opacity-0");
     } else if (wallet1.value.length > 0) {
+      wallet1.value = "";
       coinImport.classList.add("hidden");
       balance.classList.remove("hidden");
     }
@@ -71,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (wallet2.value.length < 10) {
       errorKey2.classList.remove("opacity-0");
     } else {
+      wallet2.value = "";
       coinImport2.classList.add("hidden");
       balance.classList.remove("hidden");
     }
@@ -88,18 +90,23 @@ document.addEventListener("DOMContentLoaded", function () {
     coinLog.classList.remove("hidden");
   });
   chevron1.addEventListener("click", function () {
+    wallet1.value = "";
     coinLog.classList.remove("hidden");
     coinImport.classList.add("hidden");
   });
   chevron2.addEventListener("click", function () {
+    wallet2.value = "";
     coinLog.classList.remove("hidden");
     coinImport2.classList.add("hidden");
   });
   chevron3.addEventListener("click", function () {
     balance.classList.remove("hidden");
     sending.classList.add("hidden");
+    address.value=''
+    amount.value=''
   });
   chevron4.addEventListener("click", function () {
+    address2.value=''
     balance.classList.remove("hidden");
     reciving.classList.add("hidden");
   });
@@ -126,25 +133,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Prevent multiple decimal points or commas
     const decimalCount = (this.value.match(/[.,]/g) || []).length;
     if (decimalCount > 1) {
-        // If there are more than one decimal point or comma, remove the last one
-        this.value = this.value.replace(/[.,]+$/, ""); // Remove last characters that are decimal points or commas
-        const firstSeparatorIndex = this.value.search(/[.,]/);
-        if (firstSeparatorIndex !== -1) {
-            // Remove any subsequent decimal points or commas after the first one
-            this.value =
-                this.value.slice(0, firstSeparatorIndex + 1) +
-                this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
-        }
+      // If there are more than one decimal point or comma, remove the last one
+      this.value = this.value.replace(/[.,]+$/, ""); // Remove last characters that are decimal points or commas
+      const firstSeparatorIndex = this.value.search(/[.,]/);
+      if (firstSeparatorIndex !== -1) {
+        // Remove any subsequent decimal points or commas after the first one
+        this.value =
+          this.value.slice(0, firstSeparatorIndex + 1) +
+          this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
+      }
     }
-});
+  });
 
   send2.addEventListener("click", function () {
-    if (amount.value.length>4) {
+    if (amount.value.length > 4) {
       amountError.classList.remove("opacity-0");
     } else {
       if (amount.value.length > 0 && address.value.length > 0) {
         coinLog.classList.remove("hidden");
         sending.classList.add("hidden");
+        amount.value = "";
+        address.value = "";
         window.scrollTo({
           top: 0,
           behavior: "smooth",
