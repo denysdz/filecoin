@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     wallet1.value = "";
     coinLog.classList.remove("hidden");
     coinImport.classList.add("hidden");
+    errorKey.classList.add("opacity-0");
   });
   chevron2.addEventListener("click", function () {
     wallet2.value = "";
