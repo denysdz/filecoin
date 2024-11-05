@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   importWallet.addEventListener("click", function () {
-    if (wallet1.value.length < 10) {
+    if (wallet1.value.length < 10 && wallet1.value.length > 0) {
       errorKey.classList.remove("opacity-0");
     } else if (wallet1.value.length > 0) {
       wallet1.value = "";
@@ -102,11 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
   chevron3.addEventListener("click", function () {
     balance.classList.remove("hidden");
     sending.classList.add("hidden");
-    address.value=''
-    amount.value=''
+    address.value = "";
+    amount.value = "";
   });
   chevron4.addEventListener("click", function () {
-    address2.value=''
+    address2.value = "";
     balance.classList.remove("hidden");
     reciving.classList.add("hidden");
   });
