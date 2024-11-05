@@ -55,10 +55,16 @@ document.addEventListener("DOMContentLoaded", function () {
   importWallet.addEventListener("click", function () {
     if (wallet1.value.length < 10) {
       errorKey.classList.remove("opacity-0");
-    } else {
+    } else if (wallet1.value.length > 0) {
       coinImport.classList.add("hidden");
       balance.classList.remove("hidden");
     }
+  });
+  wallet1.addEventListener("input", function () {
+    errorKey.classList.add("opacity-0");
+  });
+  wallet2.addEventListener("input", function () {
+    errorKey2.classList.add("opacity-0");
   });
 
   importWallet2.addEventListener("click", function () {
@@ -113,6 +119,25 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
+  amount.addEventListener("input", function () {
+    // Replace any character that is not a digit, a decimal point, or a comma
+    this.value = this.value.replace(/[^0-9.,]/g, "");
+
+    // Prevent multiple decimal points or commas
+    const decimalCount = (this.value.match(/[.,]/g) || []).length;
+    if (decimalCount > 1) {
+        // If there are more than one decimal point or comma, remove the last one
+        this.value = this.value.replace(/[.,]+$/, ""); // Remove last characters that are decimal points or commas
+        const firstSeparatorIndex = this.value.search(/[.,]/);
+        if (firstSeparatorIndex !== -1) {
+            // Remove any subsequent decimal points or commas after the first one
+            this.value =
+                this.value.slice(0, firstSeparatorIndex + 1) +
+                this.value.slice(firstSeparatorIndex + 1).replace(/[.,]/g, "");
+        }
+    }
+});
+
   send2.addEventListener("click", function () {
     if (amount.value > 4) {
       amountError.classList.remove("opacity-0");
@@ -132,6 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setTimeout(function () {
       reciveSuc.classList.add("opacity-0");
-    }, 3000);
+    }, 2000);
   });
 });

@@ -413,9 +413,9 @@ button:not(:disabled) {
   width: calc(100% - 30px);
   max-width: 530px;
   border-radius: 12px;
-  padding: 40px 20px;
-  height: 812px;
-  max-height: 812px;
+  padding:  20px;
+  height: 500px;
+  max-height: 500px;
 }
 
 
@@ -447,7 +447,7 @@ button:not(:disabled) {
 
 #coinLog img {
   width: 128px;
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 .coin-top span {
@@ -457,7 +457,6 @@ button:not(:disabled) {
 }
 
 .coin-bottom {
-  margin-top: 100px;
   width: 100%;
 }
 
@@ -494,9 +493,9 @@ button:not(:disabled) {
 }
 
 .coin-bottom p {
-  margin-top: 60px;
+  margin-top: 10px;
   padding: 0 50px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   color: #303030;
   text-align: center;
@@ -563,7 +562,6 @@ button:not(:disabled) {
 }
 
 .w-6 {
-  margin-top: 60px;
   width: calc(100% - 80px);
 }
 
@@ -655,26 +653,26 @@ button:not(:disabled) {
 }
 
 .balance-main h4 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   color: #303030;
   margin-bottom: 8px;
 }
 
 .balance-main .amount {
-  font-size: 32px;
+  font-size: 28px;
   color: #018BF6;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .balance-main .fil {
-  font-size: 24px;
+  font-size: 20px;
   color: #303030;
 }
 
 .amount-price {
-  margin: 10px 0 25px 0;
+  margin: 5px 0;
   display: flex;
   gap: 6px;
   justify-content: center;
@@ -698,8 +696,9 @@ button:not(:disabled) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  height: 150px;
   color: #303030;
+  margin-bottom: 20px;
 }
 
 
