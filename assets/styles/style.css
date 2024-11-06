@@ -502,25 +502,39 @@ button:not(:disabled) {
   text-align: center;
 }
 
+
 @media (max-width: 768px) {
   .coin-bottom p {
     font-size: 14px;
     padding: 0 10px;
   }
 
+  .lg{
+    display: block !important;
+  }
+
+  .sm{
+    display: none !important;
+  }
+
   .list-bl {
     font-size: 16px !important;
   }
+
   .history-list div {
-    max-width: 60% !important;}
-    .history{
-      padding: 6px !important;
-    }
+    max-width: 60% !important;
+  }
+
+  .history {
+    padding: 6px !important;
+  }
+
   .history-list div p {
     font-size: 12px !important;
 
   }
-  .history-list div span{
+
+  .history-list div span {
     font-size: 14px !important;
   }
 }
@@ -730,7 +744,7 @@ button:not(:disabled) {
 }
 
 .history-list div {
-max-width: 70%;
+  max-width: 70%;
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -809,4 +823,12 @@ input[type="number"] {
 #reciveSuc {
   font-size: 16px;
   color: #00FF38;
+}
+
+.history-list div .lg1 {
+
+  display: none;
+}
+.sm{
+  display: block;
 }
