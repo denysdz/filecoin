@@ -67,6 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
   wallet2.addEventListener("input", function () {
     errorKey2.classList.add("opacity-0");
   });
+  amount.addEventListener("input", function () {
+    amountError.classList.add("opacity-0");
+  });
+  address.addEventListener("input", function () {
+    amountError.classList.add("opacity-0");
+  });
 
   importWallet2.addEventListener("click", function () {
     if (wallet2.value.length < 10 && wallet2.value.length > 0) {
@@ -148,18 +154,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   send2.addEventListener("click", function () {
-    if (amount.value.length > 4) {
+    if (
+      amount.value.length > 4 ||
+      amount.value.length == 0 ||
+      address.value.length == 0
+    ) {
       amountError.classList.remove("opacity-0");
     } else {
       if (amount.value.length > 0 && address.value.length > 0) {
-        coinLog.classList.remove("hidden");
-        sending.classList.add("hidden");
-        amount.value = "";
-        address.value = "";
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
       }
     }
   });

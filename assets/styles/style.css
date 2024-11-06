@@ -509,17 +509,9 @@ button:not(:disabled) {
     padding: 0 10px;
   }
 
-  .lg{
-    display: block !important;
-  }
 
-  .sm{
-    display: none !important;
-  }
 
-  .list-bl {
-    font-size: 16px !important;
-  }
+
 
   .history-list div {
     max-width: 60% !important;
@@ -529,14 +521,7 @@ button:not(:disabled) {
     padding: 6px !important;
   }
 
-  .history-list div p {
-    font-size: 12px !important;
-
-  }
-
-  .history-list div span {
-    font-size: 14px !important;
-  }
+  
 }
 
 .coin-bottom p span {
@@ -754,16 +739,17 @@ button:not(:disabled) {
 
 .list-bl {
   color: #018BF6;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 14px;
   flex-grow: 1;
   white-space: nowrap;
   text-align: end;
 }
 
 
-.history-list div p {
+.history-list div p span {
   font-size: 14px;
+  font-weight: 300;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -773,7 +759,7 @@ button:not(:disabled) {
 }
 
 .history-list div span {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -825,10 +811,15 @@ input[type="number"] {
   color: #00FF38;
 }
 
-.history-list div .lg1 {
-
-  display: none;
+.history-list div p .res1{
+display: none;
 }
-.sm{
-  display: block;
+
+@media (max-width: 768px) {
+  .history-list div p .res1{
+    display: -webkit-box !important;
+    }
+    .history-list div p .res2{
+      display: none !important;
+    }
 }
