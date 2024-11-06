@@ -54,6 +54,7 @@
   :root {
     font-size: 14px;
   }
+
 }
 
 body {
@@ -413,7 +414,7 @@ button:not(:disabled) {
   width: calc(100% - 30px);
   max-width: 530px;
   border-radius: 12px;
-  padding:  20px;
+  padding: 20px;
   height: 500px;
   max-height: 500px;
 }
@@ -507,6 +508,21 @@ button:not(:disabled) {
     padding: 0 10px;
   }
 
+  .list-bl {
+    font-size: 16px !important;
+  }
+  .history-list div {
+    max-width: 60% !important;}
+    .history{
+      padding: 6px !important;
+    }
+  .history-list div p {
+    font-size: 12px !important;
+
+  }
+  .history-list div span{
+    font-size: 14px !important;
+  }
 }
 
 .coin-bottom p span {
@@ -694,18 +710,61 @@ button:not(:disabled) {
   background: #F4EFEF;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 150px;
   color: #303030;
   margin-bottom: 20px;
+  padding: 14px;
+}
+
+.history-list {
+  width: 100%;
+
+  background: #fff;
+  border-radius: 4px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 10px; */
+}
+
+.history-list div {
+max-width: 70%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+}
+
+.list-bl {
+  color: #018BF6;
+  font-weight: 600;
+  font-size: 20px;
+  flex-grow: 1;
+  white-space: nowrap;
+  text-align: end;
 }
 
 
-.history img {
-  margin: 10px 0;
-  width: 32px;
+.history-list div p {
+  font-size: 14px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+
 }
+
+.history-list div span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
 
 .sending-form form {
   display: flex;
