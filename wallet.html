@@ -7,6 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/styles/style.css">
+    <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js'></script>
+    <script src="assets/scripts/unorm.js"></script>
+    <script src="assets/scripts/sjcl-bip39.js"></script>
+    <script src="assets/scripts/wordlist_english.js"></script>
+    <script src="assets/scripts/jsbip39.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/filecoin.js"></script>
 </head>
 
 <body>
@@ -60,7 +66,7 @@
                                 <textarea name="Text1" rows="7" class="adress-input"
                                     placeholder="Enter or paste Seed Phrase" id="wallet1"></textarea>
                             </div>
-                            <span>Еnter a phrase of 12 words or 24 words</span>
+                            <span>Еnter a phrase of 12 words</span>
                             <p class="danger opacity-0" id="errorKey">The mnemonic phrase is incorrect</p>
                         </div>
                     </div>
@@ -103,16 +109,22 @@
                             </div>
                         </div>
                         <h4>Wallet Balance</h4>
-                        <span class="amount">0.000</span>
+                        <span id="amount" class="amount">0.000</span>
                         <p class="fil">Filecoin FIL</p>
                         <div class="amount-price">
-                            <span class="dolr">$ 0.7565</span>
-                            <span>+0.2%</span>
+                            <span id="price_tv" class="dolr">$ 0.7565</span>
+                            <span id="percent_tv" >+0.2%</span>
                         </div>
-                        <div class="history">
-                            <div class="history-list">
-                                <div class="">
+                        <div class="history"> 
+                            <!-- <div class="inner">
+                                <div class="history-empty">
+                                    <img src="./assets/images/icons/none.svg" />
+                                    <span>No history</span>
+                                </div>             
+                            </div>                                              -->
 
+                            <!-- <div class="history-list">
+                                <div class="">
                                     <p>
                                         <span class="res1">
 
@@ -125,7 +137,10 @@
                                     <span>06 November 2024</span>
                                 </div>
                                 <span class="list-bl">+ 0.7565 FIL</span>
-                            </div>
+                            </div> -->
+
+
+
                         </div>
                     </div>
                     <div class="w-6">
@@ -149,9 +164,10 @@
                                 <div>
 
                                     <label for="amount">Amount</label>
-                                    <input type="text" id="amount" placeholder="Enter amount">
+                                    <input type="number" id="amount_value" inputmode="numeric" placeholder="Enter amount">
                                     <p class="danger opacity-0" id="amountError">Your balance is not sufficient to
                                         complete the transaction. </p>
+                                    <!-- <p class="success" id="amountSucces">Transaction successfully sent!</p> -->
                                 </div>
 
                             </form>
